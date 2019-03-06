@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content%}
+<h3 style = "color: maroon; font-family: ubuntu; text-align: center;">today_list.html</h3>
+<h3 style = "color: maroon; font-family: ubuntu; text-align: center;">{{ messages }}</h3>
+
+{% for message in get_flashed_messages() %}
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <button type="button" class="fade close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  {{ message }}
+</div>
+
+{% endfor %}
+
+<h3>Today:</h5>
+<ul>
+
+  {% for n in nutrients %}
+  <li>
+     {{ n['id'] }}: {{ n['item'] }}
+     <ul>
+       <li>
+         Calories {{ n['kcal'] }}
+       </li>
+       <li>
+         Fat {{ n['fat'] }}
+       </li>
+       <li>
+         Carbs  {{ n['carbs'] }}
+       </li>
+       <li>
+         Protein {{ n['protein'] }}
+       </li>
+     </ul>
+  </li>
+  {% endfor %}
+</ul>
+
+
+
+<!-- <h5>Confirmation of organism registration</h5>
+<ul>
+  <li>
+     Name: {{ session['organism'] }}
+  </li>
+  <li>
+    RefSeq annotation? {{ session['ref_seq_ann'] }}
+  </li>
+  <li>
+    Total sequence length: {{ session['tot_seq_len'] }}
+  </li>
+  <li>
+    Assembly level:  {{ session['assembly_level'] }}
+  </li>
+  <li>
+    Assembly name: {{ session['assembly_name'] }}
+  </li>
+</ul> -->
+{% endblock %}

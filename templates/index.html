@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content%}
+<div class="jumbotron">
+  <h5 style = "color: maroon; font-family: ubuntu; text-align: center;">index.html</h5>
+
+  {% if current_user.is_authenticated %}
+  <h3 style = "color: maroon; font-family: ubuntu; text-align: center;">Welcome to Mercy Light, {{ current_user.username }}</h3>
+
+  {% else %}
+  <h3 style = "color: maroon; font-family: ubuntu; text-align: center;">Please log in</h3>
+
+  {% endif %}
+</div>
+{% endblock %}

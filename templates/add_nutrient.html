@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content%}
+<div class="jumbotron">
+  <h3 style = "color: maroon; font-family: ubuntu; text-align: center;">nutrient.html</h3>
+  {% if item %}
+  <h3>{{ item }}</h3>
+  {% else %}
+  <h3>Register a food item </h3>
+  {% endif%}
+
+<form  method="POST">
+  {{ form.hidden_tag() }}
+  {{ form.item.label }}{{ form.item }}
+  <br>
+  {{ form.kcal.label }}{{ form.kcal }}
+  <br>
+  {{ form.fat.label }}{{ form.fat }}
+  <br>
+  {{ form.carbs.label }}{{ form.carbs }}
+  <br>
+  {{ form.protein.label }}{{ form.protein }}
+  <br>
+
+  {{ form.submit() }}
+  <!-- <input type="text" name="organism" value=""> -->
+
+  <!-- organism = StringField("Organism", validators=[DataRequired()])
+    ref_seq_ann = BooleanField("RefSeq annotation available")
+    assembly_level = RadioField("Assembly level", choices=[('complete','Complete genome'),
+                                        ('chrom','Chromosome'),
+                                        ('scaffod','Scaffold'),
+                                        ('contig','Contig') ])
+    assembly_name = SelectField(u"Select assembly:", choices=[('R64','R64'),
+                                          ('ASM105121v1','ASM105121v1'),
+                                          ('ASM308665v1','ASM308665v1') ]) -->
+
+    <!-- submit = SubmitField('Submit') -->
+
+
+
+
+
+
+
+</form>
+
+</div>
+{% endblock %}

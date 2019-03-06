@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content%}
+<div class="jumbotron">
+  <h3 style = "color: maroon; font-family: ubuntu; text-align: center;">organism.html</h3>
+
+  {% if organism %}
+  <h3>{{ organism }}</h3>
+  {% else %}
+  <h3>Register an organism</h3>
+  {% endif%}
+
+<form  method="POST">
+  {{ form.hidden_tag() }}
+  {{ form.organism.label }}{{ form.organism }}
+  <br>
+  {{ form.ref_seq_ann.label }}{{ form.ref_seq_ann }}
+  <br>
+  {{ form.tot_seq_len.label }}{{ form.tot_seq_len }}
+  <br>
+  {{ form.assembly_level.label }}{{ form.assembly_level }}
+  <br>
+  {{ form.assembly_name.label }}{{ form.assembly_name }}
+  <br>
+
+  {{ form.submit() }}
+  <!-- <input type="text" name="organism" value=""> -->
+
+  <!-- organism = StringField("Organism", validators=[DataRequired()])
+    ref_seq_ann = BooleanField("RefSeq annotation available")
+    assembly_level = RadioField("Assembly level", choices=[('complete','Complete genome'),
+                                        ('chrom','Chromosome'),
+                                        ('scaffod','Scaffold'),
+                                        ('contig','Contig') ])
+    assembly_name = SelectField(u"Select assembly:", choices=[('R64','R64'),
+                                          ('ASM105121v1','ASM105121v1'),
+                                          ('ASM308665v1','ASM308665v1') ]) -->
+
+    <!-- submit = SubmitField('Submit') -->
+
+
+
+
+
+
+
+</form>
+
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content%}
+
+    <h2 style = 'color: maroon; font-family: Ariel, sans-serif;; text-align: center;'>{{ header }}</h2>
+    <h3 style = 'color: maroon; font-family: ubuntu; text-align: center;'>5 Methods to Develop Your Online Presence (for Researchers)</h2>
+<p>Much of the activity around the world now takes place online. Researchers store data online, communicate via e-mail, and of course, read scholarly articles published online. But there is more online than just one’s data. As with any other job, it’s very important for researchers to control their own online presence. When someone enters your name into Google, what will they find? What do you want them to find</p>
+  <!-- <img src="../static/jaguar.jpg" height = '350' width='250' /> -->
+  <img src="{{url_for('static', filename='jaguar.jpg') }}" height = '350' width='250' />
+  <ul>
+    {% for r in researchers %}
+      {% if r[0] == "J" %}
+    <li>{{ r.upper() }}</li>
+    {% else %}
+    <li>{{ r }}</li>
+
+    {% endif %}
+    {% endfor %}
+  </ul>
+
+  {% for r in researchers %}
+    {% if r[:4] == 'Rakh' %}
+    <h4>{{ r }} is special!!</h4>
+    {% endif %}
+  {% endfor %}
+
+{% endblock %}

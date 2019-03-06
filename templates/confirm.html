@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content%}
+<h3 style = "color: maroon; font-family: ubuntu; text-align: center;">confirm.html</h3>
+<h3 style = "color: maroon; font-family: ubuntu; text-align: center;">{{ messages }}</h3>
+
+{% for message in get_flashed_messages() %}
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <button type="button" class="fade close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  {{ message }}
+</div>
+
+{% endfor %}
+<h5>Confirmation of food item</h5>
+<ul>
+  <li>
+     Item {{ session['item'] }}
+  </li>
+  <li>
+    Calories {{ session['kcal'] }}
+  </li>
+  <li>
+    Fat {{ session['fat'] }}
+  </li>
+  <li>
+    Carbs  {{ session['carbs'] }}
+  </li>
+  <li>
+    Protein {{ session['protein'] }}
+  </li>
+</ul>
+
+
+
+<!-- <h5>Confirmation of organism registration</h5>
+<ul>
+  <li>
+     Name: {{ session['organism'] }}
+  </li>
+  <li>
+    RefSeq annotation? {{ session['ref_seq_ann'] }}
+  </li>
+  <li>
+    Total sequence length: {{ session['tot_seq_len'] }}
+  </li>
+  <li>
+    Assembly level:  {{ session['assembly_level'] }}
+  </li>
+  <li>
+    Assembly name: {{ session['assembly_name'] }}
+  </li>
+</ul> -->
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content%}
+<h3 style = "color: maroon; font-family: ubuntu; text-align: center;">login.html</h3>
+
+<form  method="POST">
+  {{ form.hidden_tag() }}
+  {{ form.username.label }}{{ form.username }}
+  <br>
+  {{ form.password.label }}{{ form.password }}
+  <br>
+
+  {{ form.submit() }}
+
+
+
+
+  </form>
+
+
+{% endblock %}
